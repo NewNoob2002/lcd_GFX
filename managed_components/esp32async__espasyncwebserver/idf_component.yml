@@ -1,0 +1,41 @@
+dependencies:
+  bblanchon/arduinojson:
+    require: public
+    version: ^7.4.1
+  esp32async/asynctcp:
+    require: public
+    version: ^3.4.0
+  espressif/arduino-esp32:
+    require: public
+    version: ^3.1.1
+description: Async Web Server for ESP32 Arduino
+files:
+  exclude:
+  - idf_component_examples/
+  - idf_component_examples/**/*
+  - docs/
+  - docs/*
+  - examples/
+  - examples/**/*
+  - .gitignore
+  - .clang-format
+  - .gitpod.Dockerfile
+  - .gitpod.yml
+  - .codespellrc
+  - .editorconfig
+  - .pre-commit-config.yaml
+  - CODE_OF_CONDUCT.md
+  - library.json
+  - library.properties
+  - partitions-4MB.csv
+  - platformio.ini
+  - pre-commit.requirements.txt
+license: LGPL-3.0-or-later
+repository: git://github.com/ESP32Async/ESPAsyncWebServer.git
+repository_info:
+  commit_sha: 180d6fe10792a465673d1960675414c4e44d81a5
+  path: .
+tags:
+- arduino
+url: https://github.com/ESP32Async/ESPAsyncWebServer
+version: 3.7.7~1
