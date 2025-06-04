@@ -1,4 +1,8 @@
 {
-  "C_Cpp.intelliSenseEngine": "default",
-  "idf.port": "/dev/ttyUSB0"
+    "idf.flashType": "UART",
+    "idf.port": "/dev/ttyUSB0",
+    "files.associations": {
+        "format": "cpp",
+        "thread": "cpp"
+    }
 }
