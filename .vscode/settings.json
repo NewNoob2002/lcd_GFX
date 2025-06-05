@@ -1,3 +1,7 @@
 {
-  "C_Cpp.intelliSenseEngine": "default"
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.port": "/dev/ttyUSB0",
+  "files.associations": {
+    "vector": "cpp"
+  }
 }

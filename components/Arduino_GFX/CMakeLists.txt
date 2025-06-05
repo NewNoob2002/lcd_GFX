@@ -22,6 +22,6 @@ set(COMPONENT_REQUIRES
     esp_timer
     )
 
-message(STATUS "GFXLib use components = ${SRCS}")
+message(STATUS "GFXLib use components = ${COMPONENT_REQUIRES}")
 
 register_component()

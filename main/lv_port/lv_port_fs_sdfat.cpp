@@ -1,5 +1,4 @@
 #include "lv_port.h"
-#include "lvgl.h"
 #include "../HAL/inc/HAL.h"
 
 // 这里简单实现，暂时不添加文件系统支持

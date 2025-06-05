@@ -1,7 +1,7 @@
 #include "lv_port.h"
 #include "../HAL/inc/HAL.h"
 
-#define SCREEN_BUFFER_SIZE (CONFIG_SCREEN_HOR_RES * CONFIG_SCREEN_VER_RES / 2)
+#define SCREEN_BUFFER_SIZE (CONFIG_SCREEN_HOR_RES * CONFIG_SCREEN_VER_RES / 8)
 #define SCREEN_USE_DOUBLE_BUFFER 1 // 禁用双缓冲以节省内存
 
 // 静态分配缓冲区以避免动态内存分配问题
@@ -38,19 +38,14 @@ static void gui_task(void *args)
     while (1)
     {
         // 使用超时来防止死锁
-        if (xSemaphoreTake(xGuiSemaphore, 10 / portTICK_PERIOD_MS) == pdTRUE)
+        if (xSemaphoreTake(xGuiSemaphore, pdMS_TO_TICKS(100)) == pdTRUE)
         {
             lv_task_handler();
             // ui_tick();
             xSemaphoreGive(xGuiSemaphore);
         }
-        else
-        {
-            DISPLAY_PRINTF("无法获取LVGL信号量，跳过此次更新\n");
-        }
-
-        // 给其他任务一些时间
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(5));
+        taskYIELD();
     }
 }
 
@@ -112,7 +107,7 @@ void lv_port_disp_init()
     BaseType_t ret = xTaskCreatePinnedToCore(
         gui_task,            // 任务函数
         "lv_gui",            // 任务名称
-        8 * 1024,            // 堆栈大小
+        10 * 1024,            // 堆栈大小
         NULL,                // 任务参数
         3,                   // 任务优先级 (降低优先级避免抢占系统关键任务)
         &g_lvgl_task_handle, // 任务句柄

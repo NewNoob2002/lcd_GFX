@@ -1,10 +1,8 @@
 /*******************************************************************************
  ******************************************************************************/
 #include "HAL/inc/HAL.h"
-#include "lvgl.h"
 #include "lv_port.h"
-#include "lv_demos.h"
-#include "ui.h"
+#include "App.h"
 
 void setup(void)
 {
@@ -14,7 +12,6 @@ void setup(void)
     lv_port_init();
 
     HAL::Backlight_SetGradually(2048, 1000);
-    ui_init();
 }
 
 void loop()
