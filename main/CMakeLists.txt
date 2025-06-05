@@ -4,6 +4,7 @@ set(COMPONENT_ADD_INCLUDEDIRS
     ${MAIN_ROOT}/HAL/inc
     ${MAIN_ROOT}/app
     ${MAIN_ROOT}/lv_port
+    ${MAIN_ROOT}/resource/ResourcePool
     ${MAIN_ROOT}/Utils/lv_anim_lable
     ${MAIN_ROOT}/Utils/lv_ext_func
     )
@@ -13,6 +14,10 @@ file(GLOB SRCS
      ${MAIN_ROOT}/lv_port/*.cpp
      ${MAIN_ROOT}/app/*.cpp
      ${MAIN_ROOT}/app/*.c
+     ${MAIN_ROOT}/resource/Font/*.c
+     ${MAIN_ROOT}/resource/Image/*.c
+     ${MAIN_ROOT}/resource/ResourcePool/*.cpp
+     ${MAIN_ROOT}/resource/ResourcePool/*.c
      ${MAIN_ROOT}/Utils/lv_anim_lable/*.c
      ${MAIN_ROOT}/Utils/lv_ext_func/*.cpp
      )

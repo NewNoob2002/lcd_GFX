@@ -12,6 +12,7 @@ void setup(void)
     lv_port_init();
 
     HAL::Backlight_SetGradually(2048, 1000);
+    App_Init();
 }
 
 void loop()

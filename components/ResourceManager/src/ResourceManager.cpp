@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "lvgl.h"
 
+#define ResourceManager_DEBUG
 #ifdef ResourceManager_DEBUG
 #define RES_LOG_INFO(format, ...) printf("[ResourceManager] [Info] " format, ##__VA_ARGS__)
 #define RES_LOG_WARN(format, ...) printf("[ResourceManager] [Warn] " format, ##__VA_ARGS__)
@@ -53,7 +54,7 @@ bool ResourceManager::AddResource(const char* name, void* ptr)
     ResourceNode_t node;
     if (SearchNode(name, &node))
     {
-        RES_LOG_WARN("%s was register", name);
+        RES_LOG_WARN("%s was register\r\n", name);
         return false;
     }
 
@@ -61,7 +62,7 @@ bool ResourceManager::AddResource(const char* name, void* ptr)
     node.ptr = ptr;
     NodePool.push_back(node);
 
-    RES_LOG_INFO("%s[0x%p] add success", node.name, node.ptr);
+    RES_LOG_INFO("%s[0x%p] add success\r\n", node.name, node.ptr);
 
     return true;
 }
@@ -76,7 +77,7 @@ bool ResourceManager::RemoveResource(const char* name)
     ResourceNode_t node;
     if(!SearchNode(name, &node))
     {
-        RES_LOG_ERROR("%s was not found", name);
+        RES_LOG_ERROR("%s was not found\r\n", name);
         return false;
     }
 
@@ -84,13 +85,13 @@ bool ResourceManager::RemoveResource(const char* name)
 
     if (iter == NodePool.end())
     {
-        RES_LOG_ERROR("%s was not found", name);
+        RES_LOG_ERROR("%s was not found\r\n", name);
         return false;
     }
 
     NodePool.erase(iter);
 
-    RES_LOG_INFO("%s remove success", name);
+    RES_LOG_INFO("%s remove success\r\n", name);
 
     return true;
 }
@@ -106,11 +107,11 @@ void* ResourceManager::GetResource(const char* name)
 
     if(!SearchNode(name, &node))
     {
-        RES_LOG_WARN("%s was not found, return default[0x%p]", name, DefaultPtr);
+        RES_LOG_WARN("%s was not found, return default[0x%p]\r\n", name, DefaultPtr);
         return DefaultPtr;
     }
 
-    RES_LOG_INFO("%s[0x%p] was found", name, node.ptr);
+    RES_LOG_INFO("%s[0x%p] was found\r\n", name, node.ptr);
 
     return node.ptr;
 }
@@ -123,5 +124,5 @@ void* ResourceManager::GetResource(const char* name)
 void ResourceManager::SetDefault(void* ptr)
 {
     DefaultPtr = ptr;
-    RES_LOG_INFO("set [0x%p] to default", DefaultPtr);
+    RES_LOG_INFO("set [0x%p] to default\r\n", DefaultPtr);
 }

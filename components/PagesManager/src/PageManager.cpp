@@ -1170,7 +1170,7 @@ void PageManager::SetGlobalLoadAnimType(LoadAnim_t anim, uint16_t time, lv_anim_
     _AnimState.Global.Time = time;
     _AnimState.Global.Path = path;
 
-    PM_LOG_INFO("Set global load anim type = %d", anim);
+    PM_LOG_INFO("Set global load anim type = %s", LoadAnimTypeToString(anim));
 }
 
 /**

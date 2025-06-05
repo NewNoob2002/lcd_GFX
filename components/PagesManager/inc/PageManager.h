@@ -68,6 +68,24 @@ public:
         ROOT_DRAG_DIR_VER,
     } RootDragDir_t;
 
+    const char* LoadAnimTypeToString(LoadAnim_t anim)
+    {
+        switch (anim)
+        {
+            case LOAD_ANIM_GLOBAL: return "LOAD_ANIM_GLOBAL";
+            case LOAD_ANIM_OVER_LEFT: return "LOAD_ANIM_OVER_LEFT";
+            case LOAD_ANIM_OVER_RIGHT: return "LOAD_ANIM_OVER_RIGHT";
+            case LOAD_ANIM_OVER_TOP: return "LOAD_ANIM_OVER_TOP";
+            case LOAD_ANIM_OVER_BOTTOM: return "LOAD_ANIM_OVER_BOTTOM";
+            case LOAD_ANIM_MOVE_LEFT: return "LOAD_ANIM_MOVE_LEFT";
+            case LOAD_ANIM_MOVE_RIGHT: return "LOAD_ANIM_MOVE_RIGHT";
+            case LOAD_ANIM_MOVE_TOP: return "LOAD_ANIM_MOVE_TOP";
+            case LOAD_ANIM_MOVE_BOTTOM: return "LOAD_ANIM_MOVE_BOTTOM";
+            case LOAD_ANIM_FADE_ON: return "LOAD_ANIM_FADE_ON";
+            case LOAD_ANIM_NONE: return "LOAD_ANIM_NONE";
+            default: return "UNKNOWN_LOAD_ANIM_TYPE";
+        }
+    }
     /* Animated setter */
     typedef void(*lv_anim_setter_t)(void*, int32_t);
 

@@ -1,5 +1,5 @@
 // #include "Common/DataProc/DataProc.h"
-// #include "Resource/ResourcePool.h"
+#include "ResourcePool.h"
 // #include "Pages/StatusBar/StatusBar.h"
 #include "PageManager.h"
 #include "AppFactory.h"
@@ -34,4 +34,7 @@ void App_Init(void)
     lv_style_set_bg_color(&rootStyle, lv_color_black());
 
     manager.SetRootDefaultStyle(&rootStyle);
+
+    /* Initialize resource pool */
+    ResourcePool::Init();
 }
