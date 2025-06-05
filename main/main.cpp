@@ -13,7 +13,7 @@ void setup(void)
     lv_init();
     lv_port_init();
 
-    HAL::Backlight_SetGradually(2048, 1500);
+    HAL::Backlight_SetGradually(2048, 1000);
     ui_init();
 }
 
