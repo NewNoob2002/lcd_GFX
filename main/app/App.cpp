@@ -21,9 +21,9 @@ void App_Init(void)
     lv_obj_t *scr = lv_scr_act();
     lv_obj_remove_style_all(scr);
     lv_obj_set_style_bg_opa(lv_scr_act(), LV_OPA_COVER, 0);
-    lv_obj_set_style_bg_color(lv_scr_act(), lv_color_black(), 0);
+    lv_obj_set_style_bg_color(lv_scr_act(), lv_color_white(), 0);
     lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
-    lv_disp_set_bg_color(lv_disp_get_default(), lv_color_black());
+    lv_disp_set_bg_color(lv_disp_get_default(), lv_color_white());
 
     /* Set root default style */
     static lv_style_t rootStyle;
@@ -31,7 +31,7 @@ void App_Init(void)
     lv_style_set_width(&rootStyle, LV_HOR_RES);
     lv_style_set_height(&rootStyle, LV_VER_RES);
     lv_style_set_bg_opa(&rootStyle, LV_OPA_COVER);
-    lv_style_set_bg_color(&rootStyle, lv_color_black());
+    lv_style_set_bg_color(&rootStyle, lv_color_white());
 
     manager.SetRootDefaultStyle(&rootStyle);
 

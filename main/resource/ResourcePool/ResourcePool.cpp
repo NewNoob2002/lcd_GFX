@@ -30,7 +30,6 @@ extern "C"
         IMPORT_FONT(agencyb_36);
 
         /* Import Images */
-        IMPORT_IMG(alarm);
         IMPORT_IMG(battery);
         IMPORT_IMG(battery_info);
         IMPORT_IMG(bicycle);
