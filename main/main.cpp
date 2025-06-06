@@ -36,7 +36,5 @@ void setup(void)
 
 void loop()
 {
-    // 确保LVGL任务处理正常运行
-    lv_task_handler();
-    delay(5);
+    delay(1000);
 }
